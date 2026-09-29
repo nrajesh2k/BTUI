@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Braintree Drop-in Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: -apple-system, Arial, sans-serif; max-width: 480px; margin: 60px auto; padding: 0 16px; }
+    h1 { font-size: 20px; }
+    #dropin-container { margin: 20px 0; }
+    button { background: #0070ba; color: #fff; border: none; padding: 12px 20px; border-radius: 6px; font-size: 15px; cursor: pointer; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    #result { margin-top: 20px; padding: 12px; border-radius: 6px; display: none; }
+    #result.success { background: #e6f4ea; color: #1e7a34; display: block; }
+    #result.error { background: #fdecea; color: #b3261e; display: block; }
+    label { display: block; margin-top: 12px; font-size: 14px; }
+    input { width: 100%; padding: 8px; box-sizing: border-box; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Braintree Drop-in Checkout</h1>
+
+  <label for="amount">Amount (USD)</label>
+  <input type="text" id="amount" value="10.00" />
+
+  <div id="dropin-container"></div>
+  <button id="submit-button">Pay Now</button>
+  <div id="result"></div>
+
+  <script src="https://js.braintreegateway.com/web/dropin/1.43.0/js/dropin.min.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
