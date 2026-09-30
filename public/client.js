@@ -18,7 +18,16 @@ async function init() {
       authorization: clientToken,
       container: '#dropin-container',
       // Uncomment to enable additional payment methods once configured
-      // paypal: { flow: 'checkout', amount: '10.00', currency: 'USD' },
+       paypal: { flow: 'checkout', amount: '10.00', currency: 'USD' },
+      googlePay: {
+      googlePayVersion: 2,
+      merchantId: '1343', // Sandbox: can often omit or use test value
+      transactionInfo: {
+        totalPriceStatus: 'FINAL',
+        totalPrice: '10.00',
+        currencyCode: 'USD',
+      },
+    },
     },
     (err, instance) => {
       if (err) {
